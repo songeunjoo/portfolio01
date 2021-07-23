@@ -1,0 +1,74 @@
+header {text-align:center;line-height:100px;background:#f2f2f2;}
+
+nav {border-top:1px solid#333;border-bottom:1px solid#333;position:relative}
+nav>ul {display:flex;width:1200px;text-align:center;margin:0 auto;}
+nav>ul>li {line-height:40px;flex:1;position:relative;}
+nav>ul>li~li {border-left:1px solid#333;}
+
+
+nav>ul>li>ul {height:0;overflow:hidden;position:absolute;top:40px;left:0;width:100%;transition:0.5s;z-index:999;}
+nav>ul:hover>li>ul {height:200px;}
+nav>ul:after {content:""; display:block;position:absolute;top:41px;left:0;background:#fff;width:100%;height:0;transition:0.5s;z-index: 998;}
+nav>ul:hover:after {display:block;height:200px;}
+
+
+
+
+
+
+@media screen and (max-width:768px) {
+    nav {position:fixed;top:0;left:-100%;border-top:none;border-bottom:none;width:calc(100% - 90px);height:100vh;background:#fff;border-right:1px solid#333;z-index:999;}
+    nav.on {left:0;}
+    nav>ul {display:flex;flex-direction:column;width:auto;text-align:center;margin:0 auto;padding:100px 30px;}
+    nav>ul>li {line-height:40px;flex:1;position:relative;}
+    nav>ul>li~li {border-left:none;border-top:1px solid#ddd;}
+    
+    
+    nav>ul>li>ul {height:0;overflow:hidden;position:static;top:40px;left:0;width:100%;background:#ddd;transition:0.5s;z-index:999;}
+    nav>ul:hover>li>ul {height:0;}
+
+    nav>ul>li.on>ul{height:200px;}
+
+    nav>ul:after {content:""; display:none;position:absolute;top:41px;left:0;background:#fff;width:100%;height:0;transition:0.5s;z-index: 998;}
+    nav>ul:hover:after {height:0;}
+}
+
+
+
+
+#visual {position:relative;background:#333;color:#f2f2f2;line-height:400px;text-align:center;}
+#content {position:relative;line-height:400px;text-align:center;}
+footer {border-top:1px solid#ddd;padding:30px 0 50px 0;text-align:center;}
+
+
+
+
+#mpn {display:none;position:fixed;top:30px;right:30px;width:30px;height:30px;overflow:hidden;}
+#mpn>span {position: absolute;top:0;left:0;width:100%;height:2px;background:#333;transition:0.4s;}
+
+#mpn>span:nth-child(1) {top:0;}
+#mpn>span:nth-child(2) {top: 10px;}
+#mpn>span:nth-child(3) {top: 10px;}
+#mpn>span:nth-child(4) {top: 20px;}
+
+
+
+@media screen and (max-width:768px) {
+    #mpn {display:block;}
+
+    #mpn.on>span:nth-child(1) {left:100%;}
+    #mpn.on>span:nth-child(2) {transform:rotate(45deg);}
+    #mpn.on>span:nth-child(3) {transform:rotate(-45deg);}
+    #mpn.on>span:nth-child(4) {left:-100%;}
+}
+
+
+
+
+
+
+
+
+
+
+
